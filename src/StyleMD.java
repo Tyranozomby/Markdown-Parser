@@ -69,7 +69,7 @@ public abstract class StyleMD {
      */
     @Override
     public boolean equals(Object autreStyle) {
-        if (!(autreStyle instanceof StyleMD))
+        if (!(autreStyle instanceof StyleMD) || this.getClass()!=autreStyle.getClass())
             return false;
 
         StyleMD autre = (StyleMD) autreStyle;

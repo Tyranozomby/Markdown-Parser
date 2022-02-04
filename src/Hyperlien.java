@@ -47,7 +47,7 @@ public class Hyperlien extends StyleMD {
         if (texte == null)
             texte = "null";
 
-        String retour = "[" + texte.trim() + "] (" + url + ")";
+        String retour = "[" + texte.trim() + "](" + url + ")";
 
         return appliquerDisposition(retour);
     }

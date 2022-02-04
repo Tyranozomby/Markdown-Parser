@@ -26,7 +26,7 @@ public class Titre2 extends StyleMD {
     @Override
     public String formater(String texte) {
         if (texte == null)
-            return "null\n----";
+            texte = "null";
 
         String retour = texte.trim();
         int longueur = retour.length();
