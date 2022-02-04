@@ -26,8 +26,7 @@ public class Emphase extends StyleMD {
      */
     @Override
     public String formater(String texte) {
-        if (texte == null)
-            texte = "null";
+        if (texte == null) texte = "null";
 
         String retour = "**" + texte.trim() + "**";
 

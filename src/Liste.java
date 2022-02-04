@@ -40,8 +40,7 @@ public class Liste extends StyleMD {
      */
     @Override
     public String formater(String texte) {
-        if (texte == null)
-            texte = "null";
+        if (texte == null) texte = "null";
 
         if (!listeNumerotee) { //liste à puces
             texte = "* " + texte.trim();
