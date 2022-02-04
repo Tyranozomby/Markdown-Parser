@@ -43,24 +43,29 @@ public abstract class StyleMD {
     }
 
     /**
-     * Le texte à formater dans ce style Markdown. La redéfinition de cette méthode
+     * Le texte à formater dans un style Markdown. La redéfinition de cette méthode
      * (dans chaque sous-classe) retourne le format Markdown du texte donné en
      * paramètre (dans le style représenté par la sous-classe).
+     *
+     * @param texte Le texte à formater dans un style Markdown.
+     * @return Le texte formaté.
      */
     public abstract String formater(String texte);
 
     /**
      * Ce getter retourne simplement la valeur de l'attribut disposition.
      *
-     * @return disposition
+     * @return La disposition.
      */
     public int getDisposition() {
         return disposition;
     }
 
     /**
-     * L'autre style avec lequel comparer ce style.
      * Deux objets de type StyleMD sont considérés comme égaux s'ils ont la même disposition
+     *
+     * @param autreStyle L'autre style avec lequel comparer ce style.
+     * @return Un booléen correspondant à l'égalité des deux styles.
      */
     @Override
     public boolean equals(Object autreStyle) {
