@@ -23,7 +23,7 @@ public class TexteSimple extends StyleMD {
     /**
      * Cette méthode retourne le format Markdown du texte donné en paramètre, dans le style TexteSimple.
      *
-     * @param texte Le texte à formater dans un style Markdown.
+     * @param texte Le texte à formater dans le style TexteSimple.
      * @return Le texte où l'on a remplacé tous les sauts de lignes '\n' par un saut de ligne HTML (<br/>).
      */
     @Override
