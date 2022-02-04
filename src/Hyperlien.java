@@ -13,10 +13,14 @@ public class Hyperlien extends StyleMD {
     private final String url;
 
     /**
-     * Ce constructeur construit un Hyperlien en initialisant ses attributs url et disposition avec les valeurs données
-     * en paramètres. Cependant, si le paramètre disposition est invalide (n'est pas égal à LIGNE ou BLOC), on ignore le
-     * paramètre, et l'on initialise l'attribut disposition à BLOC. Si le paramètre url est null ou si url.trim() est
-     * vide, on ignore le paramètre, et l'on assigne la valeur "http://localhost" à l'attribut url.
+     * Ce constructeur construit un Hyperlien en initialisant ses attributs url
+     * et disposition avec les valeurs données en paramètres.
+     * <p>
+     * Cependant, si le paramètre disposition est invalide (n'est pas égal à LIGNE ou BLOC),
+     * on ignore le paramètre, et l'on initialise l'attribut disposition à BLOC.
+     * <p>
+     * Si le paramètre url est null ou si url.trim() est vide,
+     * on ignore le paramètre, et l'on assigne la valeur "http://localhost" à l'attribut url.
      *
      * @param url         L'URL de la ressource ciblée par cet Hyperlien.
      * @param disposition La disposition pour cet Hyperlien. Doit être LIGNE ou BLOC.
@@ -32,14 +36,25 @@ public class Hyperlien extends StyleMD {
     }
 
     /**
-     * Cette méthode retourne le format Markdown du texte donné en paramètre, dans le style Hyperlien.
+     * Cette méthode retourne le format Markdown du texte donné en paramètre,
+     * dans le style Hyperlien.
      *
      * @param texte Le texte du lien entre crochet.
      * @return Le texte du lien entre crochets, suivi de l'URL entre parenthèses.
      */
     @Override
     public String formater(String texte) {
-        return "[" + texte + "] (" + url + ")";
+        if (texte == null)
+            return "null";
+
+        String retour = "[" + texte.trim() + "] (" + url + ")";
+
+        if (getDisposition() == StyleMD.BLOC)
+            retour = "\n" + retour + "\n";
+        else if (getDisposition() == StyleMD.LIGNE)
+            retour = retour + "\n";
+
+        return retour;
     }
 
     /**
@@ -53,7 +68,8 @@ public class Hyperlien extends StyleMD {
 
     /**
      * Cette méthode est la redéfinition de la méthode equals (de la classe StyleMD)
-     * Deux objets de type Hyperlien sont considérés comme égaux si tous leurs attributs (disposition et url) sont égaux.
+     * Deux objets de type Hyperlien sont considérés comme égaux si tous leurs
+     * attributs (disposition et url) sont égaux.
      *
      * @param autreHyperlien L'autre Hyperlien avec lequel comparer celui-ci.
      * @return Un booléen correspondant à l'égalité des deux Hyperliens.
