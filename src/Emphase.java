@@ -31,9 +31,6 @@ public class Emphase extends StyleMD {
 
         String retour = "**" + texte.trim() + "**";
 
-        // Toujours de type LIGNE
-        retour = retour + "\n";
-
-        return retour;
+        return appliquerDisposition(retour);
     }
 }

@@ -33,11 +33,6 @@ public class TexteSimple extends StyleMD {
 
         String retour = texte.trim().replace("\n", "<br/>");
 
-        if (getDisposition() == StyleMD.BLOC)
-            retour = "\n" + retour + "\n";
-        else if (getDisposition() == StyleMD.LIGNE)
-            retour = retour + "\n";
-
-        return retour;
+        return appliquerDisposition(retour);
     }
 }

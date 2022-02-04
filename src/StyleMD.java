@@ -75,4 +75,17 @@ public abstract class StyleMD {
         StyleMD autre = (StyleMD) autreStyle;
         return this.disposition == autre.disposition;
     }
+
+    /**
+     * Applique la disposition du type BLOC ou LIGNE du style.
+     *
+     * @param texte Le texte à formater.
+     * @return Le texte formaté en fonction de sa disposition.
+     */
+    public String appliquerDisposition(String texte) {
+        if (disposition == StyleMD.BLOC)
+            return "\n" + texte + "\n";
+        else //if (disposition == StyleMD.LIGNE)
+            return texte + "\n";
+    }
 }
