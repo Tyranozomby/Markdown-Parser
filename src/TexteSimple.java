@@ -29,7 +29,7 @@ public class TexteSimple extends StyleMD {
     @Override
     public String formater(String texte) {
         if (texte == null)
-            return "null";
+            texte = "null";
 
         String retour = texte.trim().replace("\n", "<br/>");
 
