@@ -25,9 +25,10 @@ public class Titre3 extends StyleMD {
      */
     @Override
     public String formater(String texte) {
+        String retour;
         if (texte == null) texte = "null";
 
-        String retour = "### " + texte.trim();
+        retour = "### " + texte.trim();
         return appliquerDisposition(retour);
     }
 }

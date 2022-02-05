@@ -32,7 +32,7 @@ public abstract class StyleMD {
      * est invalide (n'est pas égal à <i>LIGNE</i> ou <i>BLOC</i>), on ignore le paramètre,
      * et l'on initialise l'attribut <i>disposition</i> à <i>BLOC</i>.
      *
-     * @param <i>disposition</i> Indique la <i>disposition</i> de ce StyleMD. Doit être <i>LIGNE</i> ou <i>BLOC</i>.
+     * @param disposition Indique la <i>disposition</i> de ce StyleMD. Doit être <i>LIGNE</i> ou <i>BLOC</i>.
      */
     public StyleMD(int disposition) {
         if ((disposition == LIGNE) || (disposition == BLOC)) {
@@ -55,7 +55,7 @@ public abstract class StyleMD {
     /**
      * Ce getter retourne simplement la valeur de l'attribut <i>disposition</i>.
      *
-     * @return La <i>disposition</i>.
+     * @return disposition La <i>disposition</i>.
      */
     public int getDisposition() {
         return disposition;

@@ -14,7 +14,7 @@ public class TexteSimple extends StyleMD {
      * Si le paramètre <i>disposition</i> est invalide (n'est pas égal à <i>LIGNE</i> ou <i>BLOC</i>),
      * on ignore le paramètre, et l'on initialise l'attribut <i>disposition</i> à <i>BLOC</i>.
      *
-     * @param <i>disposition</i> La <i>disposition</i> pour ce <u>TexteSimple</u>. Doit être <i>LIGNE</i> ou <i>BLOC</i>.
+     * @param disposition La <i>disposition</i> pour ce <u>TexteSimple</u>. Doit être <i>LIGNE</i> ou <i>BLOC</i>.
      */
     public TexteSimple(int disposition) {
         super(disposition);
@@ -28,9 +28,10 @@ public class TexteSimple extends StyleMD {
      */
     @Override
     public String formater(String texte) {
+        String retour;
         if (texte == null) texte = "null";
 
-        String retour = texte.trim().replace("\n", "<br/>");
+        retour = texte.trim().replace("\n", "<br/>");
 
         return appliquerDisposition(retour);
     }
