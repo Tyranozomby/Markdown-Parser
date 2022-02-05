@@ -4,8 +4,11 @@ import java.util.ArrayList;
  * Cette classe modélise un document <b>Markdown</b>.
  * Un tel document est composé d'une liste ordonnée d'ElementTextuelMD.
  *
- * @author TODO
- * @version Hiver 2022
+* @author TODO
+ * Code permanent : TODO
+ * Courriel : TODO
+ * Cours : INF2120-H22
+ * @version 2022-02-05
  */
 public class DocumentMD {
 

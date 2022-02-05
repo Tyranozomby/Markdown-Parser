@@ -2,7 +2,10 @@
  * Cette classe abstraite implémente différents styles <b>Markdown</b>
  *
  * @author TODO
- * @version Hiver 2022
+ * Code permanent : TODO
+ * Courriel : TODO
+ * Cours : INF2120-H22
+ * @version 2022-02-05
  */
 public abstract class StyleMD {
     /**

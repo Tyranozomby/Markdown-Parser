@@ -2,7 +2,10 @@
  * Cette classe modélise un élément de texte devant être formaté dans un style Markdown donné.
  *
  * @author TODO
- * @version Hiver 2022
+ * Code permanent : TODO
+ * Courriel : TODO
+ * Cours : INF2120-H22
+ * @version 2022-02-05
  */
 public class ElementTextuelMD {
     /**
@@ -21,7 +24,7 @@ public class ElementTextuelMD {
      * @param texte Le texte de l'objet ElementTextuelMDà créer.
      * @param style Le style Markdown de l'objet ElementTextuelMDà créer.
      * @throws ElementTextuelMDInvalideException Lorsque l'élément texte est null ou vide.
-     * @throws StyleMDInvalideException Lorsque l'élément style est null.
+     * @throws StyleMDInvalideException          Lorsque l'élément style est null.
      */
     public ElementTextuelMD(String texte, StyleMD style) throws ElementTextuelMDInvalideException, StyleMDInvalideException {
         if (texte == null || texte.trim().isEmpty())
