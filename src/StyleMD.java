@@ -69,9 +69,11 @@ public abstract class StyleMD {
      */
     @Override
     public boolean equals(Object autreStyle) {
+        StyleMD autre;
+
         if (!(autreStyle instanceof StyleMD) || this.getClass() != autreStyle.getClass()) return false;
 
-        StyleMD autre = (StyleMD) autreStyle;
+        autre = (StyleMD) autreStyle;
         return this.disposition == autre.disposition;
     }
 

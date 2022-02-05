@@ -61,7 +61,7 @@ public class Liste extends StyleMD {
     /**
      * Cette méthode retourne simplement la valeur de l'attribut <i>listeNumerotee</i>.
      *
-     * @return <i>listeNumerotee</i> Un booléen correspondant au type de liste (Puces ou Numérotée).
+     * @return listeNumerotee Un booléen correspondant au type de liste (Puces ou Numérotée).
      */
     public boolean isListeNumerotee() {
         return listeNumerotee;
@@ -77,10 +77,12 @@ public class Liste extends StyleMD {
      */
     @Override
     public boolean equals(Object autreListe) {
+        Liste autre;
+
         if (super.equals(autreListe)) {
             if (!(autreListe instanceof Liste)) return false;
 
-            Liste autre = (Liste) autreListe;
+            autre = (Liste) autreListe;
             return this.listeNumerotee == autre.listeNumerotee;
         } else {
             return false;

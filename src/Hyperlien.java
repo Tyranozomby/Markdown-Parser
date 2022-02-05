@@ -48,9 +48,11 @@ public class Hyperlien extends StyleMD {
      */
     @Override
     public String formater(String texte) {
+        String retour;
+
         if (texte == null) texte = "null";
 
-        String retour = "[" + texte.trim() + "](" + url + ")";
+        retour = "[" + texte.trim() + "](" + url + ")";
 
         return appliquerDisposition(retour);
     }
@@ -74,10 +76,12 @@ public class Hyperlien extends StyleMD {
      */
     @Override
     public boolean equals(Object autreHyperlien) {
+        Hyperlien autre;
+
         if (super.equals(autreHyperlien)) {
             if (!(autreHyperlien instanceof Hyperlien)) return false;
 
-            Hyperlien autre = (Hyperlien) autreHyperlien;
+            autre = (Hyperlien) autreHyperlien;
             return this.url.equals(autre.url);
         } else {
             return false;
