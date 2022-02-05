@@ -135,7 +135,11 @@ public class DocumentMD {
         if (texte == null || texte.trim().isEmpty())
             throw new StyleMDInvalideException();
 
-        obtenirElementTextuel(position).setTexte(texte);
+        try {
+            obtenirElementTextuel(position).setTexte(texte);
+        } catch (ElementTextuelMDInvalideException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -164,8 +168,9 @@ public class DocumentMD {
         String retour = "";
 
         for (ElementTextuelMD element : elements) {
-            retour = retour + elements.toString();
+            retour = retour + element.toString();
         }
+        return retour;
     }
 }
 
