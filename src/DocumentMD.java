@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Cette classe modélise un document <b>Markdown</b>.
  * Un tel document est composé d'une liste ordonnée d'ElementTextuelMD.
  *
-* @author TODO
+ * @author TODO
  * Code permanent : TODO
  * Courriel : TODO
  * Cours : INF2120-H22
@@ -41,8 +41,9 @@ public class DocumentMD {
      * @throws ElementTextuelMDInvalideException Lorsque l'ElementTextuelMD est null.
      */
     public void ajouterElementTextuel(ElementTextuelMD eltTexteMD) throws ElementTextuelMDInvalideException {
-        if (eltTexteMD == null)
+        if (eltTexteMD == null) {
             throw new ElementTextuelMDInvalideException();
+        }
 
         elements.add(eltTexteMD);
     }
@@ -55,10 +56,12 @@ public class DocumentMD {
      * @throws ElementTextuelMDInvalideException Lorsque l'ElementTextuelMD est null.
      */
     public void ajouterElementTextuel(int position, ElementTextuelMD eltTexteMD) throws ElementTextuelMDInvalideException {
-        if (eltTexteMD == null)
+        if (eltTexteMD == null) {
             throw new ElementTextuelMDInvalideException();
-        if (position < 0 || position > taille())
+        }
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
+        }
 
         elements.add(position, eltTexteMD);
     }
@@ -70,8 +73,9 @@ public class DocumentMD {
      * @return L'élément supprimé.
      */
     public ElementTextuelMD supprimerElementTextuel(int position) {
-        if (position < 0 || position > taille())
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
+        }
 
         return elements.remove(position);
     }
@@ -86,10 +90,12 @@ public class DocumentMD {
      * @throws ElementTextuelMDInvalideException Lorsque l'ElementTextuelMD est null.
      */
     public ElementTextuelMD remplacerElementTextuel(int position, ElementTextuelMD eltTexteMD) throws ElementTextuelMDInvalideException {
-        if (eltTexteMD == null)
+        if (eltTexteMD == null) {
             throw new ElementTextuelMDInvalideException();
-        if (position < 0 || position > taille())
+        }
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
+        }
 
         return elements.set(position, eltTexteMD);
     }
@@ -101,8 +107,9 @@ public class DocumentMD {
      * @return L'élément <b>Markdown</b> dans ce document, à la position donné.
      */
     public ElementTextuelMD obtenirElementTextuel(int position) {
-        if (position < 0 || position > taille())
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
+        }
 
         return elements.get(position);
     }
@@ -116,10 +123,12 @@ public class DocumentMD {
      * @throws StyleMDInvalideException Lorsque le texte est null ou vide.
      */
     public void modifierStyle(int position, StyleMD style) throws StyleMDInvalideException {
-        if (position < 0 || position > taille())
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
-        if (style == null)
+        }
+        if (style == null) {
             throw new StyleMDInvalideException();
+        }
 
         obtenirElementTextuel(position).setStyle(style);
     }
@@ -133,10 +142,12 @@ public class DocumentMD {
      * @throws StyleMDInvalideException Lorsque le texte est null ou vide.
      */
     public void modifierTexte(int position, String texte) throws StyleMDInvalideException {
-        if (position < 0 || position > taille())
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
-        if (texte == null || texte.trim().isEmpty())
+        }
+        if (texte == null || texte.trim().isEmpty()) {
             throw new StyleMDInvalideException();
+        }
 
         try {
             obtenirElementTextuel(position).setTexte(texte);
@@ -152,8 +163,9 @@ public class DocumentMD {
      * @return Le texte formaté selon le style <b>Markdown</b> de l'élément textuel présent à la position donnée.
      */
     public String obtenirMarkdown(int position) {
-        if (position < 0 || position > taille())
+        if (position < 0 || position > taille()) {
             throw new IndexOutOfBoundsException();
+        }
 
         return obtenirElementTextuel(position).toString();
     }

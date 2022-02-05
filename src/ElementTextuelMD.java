@@ -12,6 +12,7 @@ public class ElementTextuelMD {
      * L'élément textuel à formater.
      */
     private String texte;
+
     /**
      * Le style Markdown dans lequel on veut formater le texte.
      */
@@ -27,10 +28,13 @@ public class ElementTextuelMD {
      * @throws StyleMDInvalideException          Lorsque l'élément style est null.
      */
     public ElementTextuelMD(String texte, StyleMD style) throws ElementTextuelMDInvalideException, StyleMDInvalideException {
-        if (texte == null || texte.trim().isEmpty())
+        if (texte == null || texte.trim().isEmpty()) {
             throw new ElementTextuelMDInvalideException();
-        if (style == null)
+        }
+        if (style == null) {
             throw new StyleMDInvalideException();
+        }
+
         this.texte = texte;
         this.style = style;
     }
@@ -52,8 +56,9 @@ public class ElementTextuelMD {
      * @throws ElementTextuelMDInvalideException Lorsque l'élément texte est null ou vide.
      */
     public void setTexte(String texte) throws ElementTextuelMDInvalideException {
-        if (texte == null || texte.trim().isEmpty())
+        if (texte == null || texte.trim().isEmpty()) {
             throw new ElementTextuelMDInvalideException();
+        }
         this.texte = texte;
     }
 
@@ -74,8 +79,9 @@ public class ElementTextuelMD {
      * @throws StyleMDInvalideException Lorsque l'élément style est null.
      */
     public void setStyle(StyleMD style) throws StyleMDInvalideException {
-        if (style == null)
+        if (style == null) {
             throw new StyleMDInvalideException();
+        }
         this.style = style;
     }
 

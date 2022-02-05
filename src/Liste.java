@@ -42,7 +42,9 @@ public class Liste extends StyleMD {
      */
     @Override
     public String formater(String texte) {
-        if (texte == null) texte = "null";
+        if (texte == null) {
+            texte = "null";
+        }
 
         if (!listeNumerotee) { //liste à puces
             texte = "* " + texte.trim();
@@ -81,14 +83,18 @@ public class Liste extends StyleMD {
     @Override
     public boolean equals(Object autreListe) {
         Liste autre;
+        boolean retour;
 
         if (super.equals(autreListe)) {
-            if (!(autreListe instanceof Liste)) return false;
-
-            autre = (Liste) autreListe;
-            return this.listeNumerotee == autre.listeNumerotee;
+            if (!(autreListe instanceof Liste)) {
+                retour = false;
+            } else {
+                autre = (Liste) autreListe;
+                retour = this.listeNumerotee == autre.listeNumerotee;
+            }
         } else {
-            return false;
+            retour = false;
         }
+        return retour;
     }
 }
