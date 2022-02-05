@@ -73,11 +73,14 @@ public abstract class StyleMD {
     @Override
     public boolean equals(Object autreStyle) {
         StyleMD autre;
-        Boolean retour;
+        boolean retour;
 
-        retour = !(autreStyle instanceof StyleMD) || this.getClass() != autreStyle.getClass();
-        autre = (StyleMD) autreStyle;
-        retour = this.disposition == autre.disposition;
+        if (!(autreStyle instanceof StyleMD) || this.getClass() != autreStyle.getClass()) {
+            retour = false;
+        } else {
+            autre = (StyleMD) autreStyle;
+            retour = this.disposition == autre.disposition;
+        }
         return retour;
     }
 
@@ -89,6 +92,7 @@ public abstract class StyleMD {
      */
     public String appliquerDisposition(String texte) {
         String retour;
+
         if (disposition == StyleMD.BLOC)
             retour = "\n" + texte + "\n";
         else //if (disposition == StyleMD.LIGNE)

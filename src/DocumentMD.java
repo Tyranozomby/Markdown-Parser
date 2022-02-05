@@ -182,7 +182,8 @@ public class DocumentMD {
     public String toString() {
         String retour = "";
 
-        for (ElementTextuelMD element : elements) {
+        for (int i = 0; i < elements.size(); i++) {
+            ElementTextuelMD element = elements.get(i);
             retour = retour + element.toString();
         }
         return retour;
